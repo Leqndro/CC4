@@ -1,0 +1,36 @@
+:root{--bg:#0f1a2e;--panel:#16243d;--line:#243556;--blue:#3b82f6;--text:#e6edf7;--mut:#8fa3c4}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,sans-serif;background:var(--bg);color:var(--text)}
+.app{display:flex;min-height:100vh}
+.side{width:220px;background:#0b1424;padding:16px;display:flex;flex-direction:column;gap:6px;flex-shrink:0}
+.side h1{color:var(--blue);margin:0 0 12px}
+main{flex:1;padding:20px;max-width:900px}
+button,input,select,textarea{font:inherit;color:var(--text);background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+textarea{width:100%;min-height:70px;margin:6px 0;display:block}
+input:not([type=radio]):not([type=checkbox]){width:100%;margin:6px 0}
+button{cursor:pointer;margin:4px 4px 4px 0}
+button:disabled{opacity:.5;cursor:default}
+.side button{text-align:left;border:0;background:none}
+.side button.on,button.on{background:var(--blue);border-color:var(--blue)}
+.primary{background:var(--blue);border-color:var(--blue)}
+.ok{border-color:#22c55e}.no{border-color:#ef4444}
+.card,.sub{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;margin:12px 0}
+.sub{background:#12203a;margin:10px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.row{display:flex;gap:10px;align-items:center;justify-content:space-between}
+.row.wrap{flex-wrap:wrap;justify-content:flex-start}
+.mut{color:var(--mut);font-size:.9rem}
+.err{color:#f87171}
+.task,.msg div{white-space:pre-wrap}
+.msg{padding:8px 0;border-bottom:1px solid var(--line)}
+.badge{font-size:.75rem;padding:2px 8px;border-radius:99px;background:#334155}
+.badge.online,.st-aprovada,.st-aberta{background:#166534}
+.badge.trabalhando,.st-pendente{background:#92400e}
+.badge.manual,.st-entregue{background:#1e40af}
+.badge.desconectado,.st-rejeitada,.st-encerrada{background:#7f1d1d}
+@media(max-width:720px){
+ .app{flex-direction:column}
+ .side{width:auto;flex-direction:row;overflow-x:auto;padding:10px}
+ .side h1{display:none}.side button{white-space:nowrap}
+ main{padding:12px}
+}
